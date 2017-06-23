@@ -14,8 +14,6 @@ public class FruitListViewActivity extends AppCompatActivity {
 
     List<Fruit> fruits = new ArrayList<>();
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +21,9 @@ public class FruitListViewActivity extends AppCompatActivity {
         ListView lv = (ListView) findViewById(R.id.list_view_fruit) ;
         initFruits();
         //创建适配器
-        FruitAdapter fruitAdapter = new FruitAdapter(FruitListViewActivity.this, R.layout.fruit_item, fruits);
+        FruitAdapter fruitAdapter = new FruitAdapter(FruitListViewActivity.this,
+                R.layout.fruit_item, fruits);
+
         //绑定适配器
         lv.setAdapter(fruitAdapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

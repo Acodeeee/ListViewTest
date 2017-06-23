@@ -21,7 +21,9 @@ public class ListViewActivity extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.list_view);
         //声明适配器
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_single_choice, str);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_single_choice, str);
+
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         //绑定适配器
         lv.setAdapter(adapter);
@@ -29,7 +31,8 @@ public class ListViewActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ListViewActivity.this, "你点击的是第" + position + "行", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListViewActivity.this, "你点击的是第" + position + "行",
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
